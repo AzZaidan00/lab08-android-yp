@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.azim.lab08.databinding.ActivityDetailBinding
 import com.azim.lab08.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
@@ -15,9 +16,15 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val name = intent.getStringExtra("name")
-        binding.nameTextView.text = name
-        val phone = intent.getStringExtra("phone")
-        binding.phoneTextView.text = phone
+        binding.nameTextView.text = intent.getStringExtra("name")
+        binding.phoneTextView.text = intent.getStringExtra("phone")
+        binding.sizeTextView.text = intent.getStringExtra("size")
+
+        binding.sendButton.setOnClickListener {
+            binding.rateTextView.text = binding.ratingbar.rating.toString()
+
+            Snackbar.make(binding.root, "Thank you for your rating, we received it!",
+                Snackbar.LENGTH_LONG).setAction("Dismiss"){}.show()
+        }
     }
 }
