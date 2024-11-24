@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">lab08</string>
+    <string name="name">Full Name</string>
+    <string name="phoneNo">Phone Number</string>
+</resources>
