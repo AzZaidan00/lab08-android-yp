@@ -19,6 +19,8 @@ class DetailActivity : AppCompatActivity() {
         binding.nameTextView.text = intent.getStringExtra("name")
         binding.phoneTextView.text = intent.getStringExtra("phone")
         binding.sizeTextView.text = intent.getStringExtra("size")
+        binding.dateTextView.text = intent.getStringExtra("date")
+        binding.timeTextView.text = intent.getStringExtra("time")
 
         binding.sendButton.setOnClickListener {
             binding.rateTextView.text = binding.ratingbar.rating.toString()
